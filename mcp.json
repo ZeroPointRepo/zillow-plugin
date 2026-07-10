@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "zillapi": {
+      "url": "https://api.zillapi.com/mcp"
+    }
+  }
+}
