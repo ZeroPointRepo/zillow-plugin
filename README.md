@@ -7,8 +7,12 @@
 <h1 align="center">Zillow Plugin — Live Property Data for AI Coding Agents</h1>
 
 <p align="center">
-  <b>Zestimates, full property records, and listing search on 160M+ U.S. homes — inside Cursor, Claude Code, and any Open Plugins-compatible agent.</b><br/>
+  <b>Zestimates, full property records, and listing search on 160M+ U.S. homes — inside ChatGPT, Codex, Cursor, GitHub Copilot, Kiro, VS Code and Claude Code.</b><br/>
   One install. OAuth sign-in. No API key to manage. Free tier, no card.
+</p>
+
+<p align="center">
+  <a href="https://agent-plugins.org/specification"><img src="https://img.shields.io/badge/Agent_Plugins-1.0.0-000000?style=for-the-badge" alt="Agent Plugins 1.0.0"/></a>
 </p>
 
 <p align="center">
@@ -70,9 +74,33 @@ First property question you ask, Cursor prompts a Zillapi OAuth sign-in (create 
 /plugin install zillow@zillapi
 ```
 
-### Any Open Plugins-compatible agent
+### VS Code
 
-This repo follows the [Open Plugins](https://open-plugins.com) standard (`.plugin/plugin.json`, `skills/`, `commands/`, `.mcp.json`) — install it with your tool's plugin mechanism, pointed at this repository.
+Command Palette → **Chat: Install Plugin From Source**, then paste:
+
+```txt
+https://github.com/ZeroPointRepo/zillow-plugin
+```
+
+Or register a local clone in `settings.json`:
+
+```json
+"chat.pluginLocations": { "/absolute/path/to/zillow-plugin": true }
+```
+
+### ChatGPT, Codex, GitHub Copilot, Kiro
+
+This repository root is a conformant **[Agent Plugins 1.0.0](https://agent-plugins.org/specification)** package (`plugin.json`, `skills/`, `mcp.json`). Install it with your client's plugin mechanism pointed at this repository, or at a local clone.
+
+> Agent Plugins 1.0.0 standardizes the *package format*, not installation — each client owns its own install flow.
+
+### Any client
+
+The plugin is just a directory. Clone it wherever your client scans for plugins:
+
+```bash
+git clone https://github.com/ZeroPointRepo/zillow-plugin
+```
 
 ---
 
@@ -82,15 +110,17 @@ The bundled MCP config is exactly this:
 
 ```json
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
     "zillapi": {
+      "type": "streamable-http",
       "url": "https://api.zillapi.com/mcp"
     }
   }
 }
 ```
 
-No token, no env var. The server implements MCP OAuth 2.1 with Dynamic Client Registration: on the first (unauthenticated) request it answers `401` with discovery metadata, your client opens the sign-in flow, and from then on calls run under your Zillapi account. Sign up free at [zillapi.com/signup](https://zillapi.com/signup) — 100 credits, no card.
+No token, no env var — Agent Plugins 1.0.0 forbids embedded credentials, and authorization is client-managed by design. The server implements MCP OAuth 2.1 with Dynamic Client Registration: on the first (unauthenticated) request it answers `401` with discovery metadata, your client opens the sign-in flow, and from then on calls run under your Zillapi account. Sign up free at [zillapi.com/signup](https://zillapi.com/signup) — 100 credits, no card.
 
 ---
 
@@ -117,17 +147,29 @@ Failed calls don't consume credits. The skill and commands are written to keep s
 
 ```
 zillow-plugin/
-├── .cursor-plugin/plugin.json    # Cursor manifest
-├── .plugin/plugin.json           # Open Plugins (vendor-neutral) manifest
-├── .claude-plugin/plugin.json    # Claude Code manifest (+ marketplace.json)
-├── marketplace.json              # marketplace index (single-plugin)
-├── mcp.json / .mcp.json          # hosted MCP server, OAuth (no keys)
+├── plugin.json                   # Agent Plugins 1.0.0 manifest  ← the portable one
+├── mcp.json                      # Agent Plugins 1.0.0 MCP config (streamable-http, OAuth)
 ├── skills/zillow/SKILL.md        # when + how to use the tools
 ├── commands/                     # /zillow:property · zestimate · search · comps
-└── assets/                       # logo
+├── assets/                       # logo
+│
+├── .cursor-plugin/plugin.json    # legacy Cursor manifest
+├── .plugin/plugin.json           # legacy Open Plugins manifest
+├── .claude-plugin/plugin.json    # legacy Claude Code manifest (+ marketplace.json)
+├── marketplace.json              # marketplace index (single-plugin)
+└── .mcp.json                     # legacy MCP config
 ```
 
-The three manifests are identical — one per tool-specific discovery path.
+`plugin.json` + `mcp.json` + `skills/` at the repo root are the portable [Agent Plugins 1.0.0](https://agent-plugins.org/specification) package. The dot-directories are retained so existing installs on older client-specific formats keep working; new clients should use the root manifests.
+
+Validate the package against the published JSON Schemas at any time:
+
+```bash
+curl -sO https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
+curl -sO https://agent-plugins.org/schemas/1.0.0/mcp.schema.json
+npx ajv-cli@5 validate --spec=draft2020 -s plugin.schema.json -d plugin.json
+npx ajv-cli@5 validate --spec=draft2020 -s mcp.schema.json    -d mcp.json
+```
 
 ## Related
 

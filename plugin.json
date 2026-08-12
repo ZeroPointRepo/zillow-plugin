@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "zillapi",
+  "version": "1.0.0",
+  "description": "Live Zillow property data for AI agents — Zestimates, full property records, comps and listing search on 160M+ U.S. homes, via the hosted Zillapi MCP server. OAuth sign-in, free tier, no API key to manage.",
+  "author": {
+    "name": "Zillapi",
+    "email": "hello@zillapi.com",
+    "url": "https://zillapi.com"
+  },
+  "homepage": "https://zillapi.com",
+  "repository": "https://github.com/ZeroPointRepo/zillow-plugin",
+  "license": "MIT",
+  "keywords": [
+    "zillow",
+    "real-estate",
+    "property",
+    "zestimate",
+    "listings",
+    "comps",
+    "housing",
+    "property-data",
+    "zillapi",
+    "mcp"
+  ]
+}
