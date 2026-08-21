@@ -176,6 +176,7 @@ npx ajv-cli@5 validate --spec=draft2020 -s mcp.schema.json    -d mcp.json
 - **REST API + code examples:** [ZeroPointRepo/zillow-api](https://github.com/ZeroPointRepo/zillow-api)
 - **Standalone MCP server docs:** [ZeroPointRepo/zillow-mcp](https://github.com/ZeroPointRepo/zillow-mcp)
 - **Agent skills (API-key based, for OpenClaw / Hermes):** [ZeroPointRepo/zillow-skills](https://github.com/ZeroPointRepo/zillow-skills)
+- **Other plugins on the same open standard:** [ZeroPointRepo/awesome-agent-plugins](https://github.com/ZeroPointRepo/awesome-agent-plugins). Our directory of verified Agent Plugins, this one included.
 
 ## Support
 
