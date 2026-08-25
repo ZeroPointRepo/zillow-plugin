@@ -65,6 +65,12 @@ Run comps for https://www.zillow.com/homedetails/…_zpid/
 https://github.com/ZeroPointRepo/zillow-plugin
 ```
 
+**Add to Cursor** — MCP server only, no plugin. Paste this deeplink into your browser:
+
+```txt
+cursor://anysphere.cursor-deeplink/mcp/install?name=zillapi&config=eyJ1cmwiOiJodHRwczovL2FwaS56aWxsYXBpLmNvbS9tY3AifQ==
+```
+
 First property question you ask, Cursor prompts a Zillapi OAuth sign-in (create a free account if you don't have one — 100 credits, no card). Done.
 
 ### Claude Code
@@ -153,14 +159,14 @@ zillow-plugin/
 ├── commands/                     # /zillow:property · zestimate · search · comps
 ├── assets/                       # logo
 │
-├── .cursor-plugin/plugin.json    # legacy Cursor manifest
+├── .cursor-plugin/plugin.json    # Cursor plugin manifest (+ marketplace.json)
 ├── .plugin/plugin.json           # legacy Open Plugins manifest
 ├── .claude-plugin/plugin.json    # legacy Claude Code manifest (+ marketplace.json)
 ├── marketplace.json              # marketplace index (single-plugin)
 └── .mcp.json                     # legacy MCP config
 ```
 
-`plugin.json` + `mcp.json` + `skills/` at the repo root are the portable [Agent Plugins 1.0.0](https://agent-plugins.org/specification) package. The dot-directories are retained so existing installs on older client-specific formats keep working; new clients should use the root manifests.
+`plugin.json` + `mcp.json` + `skills/` at the repo root are the portable [Agent Plugins 1.0.0](https://agent-plugins.org/specification) package. `.cursor-plugin/` is the [Cursor plugin](https://cursor.com/docs/reference/plugins) format, validated against Cursor's published schemas; it points back at the same root `mcp.json` and `skills/`, so there is one source of truth. The remaining dot-directories are retained so existing installs on older client-specific formats keep working.
 
 Validate the package against the published JSON Schemas at any time:
 
