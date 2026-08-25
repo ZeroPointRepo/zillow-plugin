@@ -1,11 +1,11 @@
 {
   "name": "zillow",
+  "displayName": "Zillapi (Zillow Data)",
   "version": "1.0.0",
   "description": "Live Zillow property data for your AI agent — Zestimates, full property records, and listing search on 160M+ U.S. homes. OAuth sign-in, free tier, no API key to manage.",
   "author": {
     "name": "Zillapi",
-    "email": "hello@zillapi.com",
-    "url": "https://zillapi.com"
+    "email": "hello@zillapi.com"
   },
   "homepage": "https://zillapi.com",
   "repository": "https://github.com/ZeroPointRepo/zillow-plugin",
@@ -20,5 +20,13 @@
     "comps",
     "housing",
     "mcp"
-  ]
+  ],
+  "category": "integrations",
+  "tags": [
+    "zillow",
+    "real-estate",
+    "property-data",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json"
 }

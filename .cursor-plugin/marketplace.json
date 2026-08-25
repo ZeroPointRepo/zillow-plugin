@@ -2,8 +2,7 @@
   "name": "zillapi",
   "owner": {
     "name": "Zillapi",
-    "email": "hello@zillapi.com",
-    "url": "https://zillapi.com"
+    "email": "hello@zillapi.com"
   },
   "metadata": {
     "description": "Zillow property data plugins by Zillapi — live data on 160M+ U.S. homes.",
@@ -13,27 +12,7 @@
     {
       "name": "zillow",
       "source": "./",
-      "description": "Live Zillow property data for your AI agent — Zestimates, full property records, and listing search on 160M+ U.S. homes. OAuth sign-in, free tier, no API key to manage.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Zillapi",
-        "email": "hello@zillapi.com",
-        "url": "https://zillapi.com"
-      },
-      "homepage": "https://zillapi.com",
-      "repository": "https://github.com/ZeroPointRepo/zillow-plugin",
-      "license": "MIT",
-      "category": "data",
-      "keywords": [
-        "zillow",
-        "real-estate",
-        "property",
-        "zestimate",
-        "listings",
-        "comps",
-        "housing",
-        "mcp"
-      ]
+      "description": "Live Zillow property data for your AI agent — Zestimates, full property records, and listing search on 160M+ U.S. homes. OAuth sign-in, free tier, no API key to manage."
     }
   ]
 }
