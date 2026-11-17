@@ -126,7 +126,7 @@ The bundled MCP config is exactly this:
 }
 ```
 
-No token, no env var — Agent Plugins 1.0.0 forbids embedded credentials, and authorization is client-managed by design. The server implements MCP OAuth 2.1 with Dynamic Client Registration: on the first (unauthenticated) request it answers `401` with discovery metadata, your client opens the sign-in flow, and from then on calls run under your Zillapi account. Sign up free at [zillapi.com/signup](https://zillapi.com/signup) — 100 credits, no card.
+No token, no env var — Agent Plugins 1.0.0 forbids embedded credentials, and authorization is client-managed by design. The server implements MCP OAuth 2.1 with Dynamic Client Registration: on the first (unauthenticated) request it answers `401` with discovery metadata, your client opens the sign-in flow, and from then on calls run under your Zillapi account. Sign up free at [zillapi.com/signup](https://zillapi.com/signup/) — 100 credits, no card.
 
 ---
 
@@ -183,6 +183,19 @@ npx ajv-cli@5 validate --spec=draft2020 -s mcp.schema.json    -d mcp.json
 - **Standalone MCP server docs:** [ZeroPointRepo/zillow-mcp](https://github.com/ZeroPointRepo/zillow-mcp)
 - **Agent skills (API-key based, for OpenClaw / Hermes):** [ZeroPointRepo/zillow-skills](https://github.com/ZeroPointRepo/zillow-skills)
 - **Other plugins on the same open standard:** [ZeroPointRepo/awesome-agent-plugins](https://github.com/ZeroPointRepo/awesome-agent-plugins). Our directory of verified Agent Plugins, this one included.
+
+## Related Zillapi projects
+
+- [zillow-api](https://github.com/ZeroPointRepo/zillow-api): REST API docs and examples
+- [zillow-mcp](https://github.com/ZeroPointRepo/zillow-mcp): MCP server for Claude, ChatGPT, Cursor and Claude Code
+- [zillow-skills](https://github.com/ZeroPointRepo/zillow-skills): agent skills (one-command install)
+- [zillow-plugin](https://github.com/ZeroPointRepo/zillow-plugin): plugin for Claude Code and Cursor
+- [n8n-nodes-zillapi](https://github.com/ZeroPointRepo/n8n-nodes-zillapi): n8n community node
+- [crewai-zillapi](https://github.com/zillapi/crewai-zillapi): CrewAI tools
+- Examples: [zillapi-vercel-ai-sdk-example](https://github.com/ZeroPointRepo/zillapi-vercel-ai-sdk-example) (Vercel AI SDK), [zillapi-openai-agents-example](https://github.com/ZeroPointRepo/zillapi-openai-agents-example) (OpenAI Agents SDK)
+- Demos: [property-fair-value](https://github.com/ZeroPointRepo/property-fair-value), [property-scanner](https://github.com/ZeroPointRepo/property-scanner)
+
+Learn more: [Zillow API guide](https://zillapi.com/zillow-api/) · [For AI agents](https://zillapi.com/ai-agents/) · [Pricing](https://zillapi.com/pricing/) · [Zillow API alternatives](https://zillapi.com/alternatives/zillow-api/) · [Zillow's Claude connector vs Zillapi](https://zillapi.com/compare/zillow-claude-connector-vs-zillapi/) · [Zillow API pricing explained](https://zillapi.com/blog/zillow-api-pricing/) · [YouTube](https://www.youtube.com/@zillapi)
 
 ## Support
 
