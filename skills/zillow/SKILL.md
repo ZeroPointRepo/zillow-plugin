@@ -30,7 +30,7 @@ This plugin bundles the hosted **`zillapi` MCP server** (`https://api.zillapi.co
 
 ### `lookup_property_by_address` — 3 credits
 - `address` (string, required): full street address with city, state, ZIP — e.g. `"17 Zelma Dr, Greenville, SC 29617"`. Partial addresses ≥6 chars usually resolve.
-- Returns the **full record** (300+ fields): price, Zestimate, rent Zestimate, tax history, price history, photos, schools, agent contact, lat/lon, zpid.
+- Returns the **full record** (200+ fields): price, Zestimate, rent Zestimate, tax history, price history, photos, schools, agent contact, lat/lon, zpid.
 - This already contains everything — don't follow it with `get_zestimate` for the same property.
 
 ### `lookup_property_by_zpid` — 1 credit
