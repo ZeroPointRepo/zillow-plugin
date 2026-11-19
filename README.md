@@ -21,7 +21,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-4CAF50?style=for-the-badge" alt="MIT License"/></a>
 </p>
 
-> **160M+ U.S. properties · 300+ fields per home · hosted MCP · free tier, no card**
+> **160M+ U.S. properties · 200+ fields per home · hosted MCP · free tier, no card**
 > [Zillapi](https://zillapi.com) is an independent service for Zillow-sourced data — not affiliated with Zillow.
 
 ---
@@ -135,7 +135,7 @@ No token, no env var — Agent Plugins 1.0.0 forbids embedded credentials, and a
 | Tool | Cost |
 |---|---|
 | `lookup_property_by_address` | 3 credits |
-| `lookup_property_by_zpid` | 1 credit (24 h cache) |
+| `lookup_property_by_zpid` | 1 credit |
 | `get_zestimate` | 1 credit |
 | `search_listings` | 1 credit **per listing returned** |
 
