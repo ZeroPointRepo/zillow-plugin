@@ -135,7 +135,7 @@ No token, no env var — Agent Plugins 1.0.0 forbids embedded credentials, and a
 | Tool | Cost |
 |---|---|
 | `lookup_property_by_address` | 3 credits |
-| `lookup_property_by_zpid` | 1 credit (24 h cache) |
+| `lookup_property_by_zpid` | 1 credit |
 | `get_zestimate` | 1 credit |
 | `search_listings` | 1 credit **per listing returned** |
 

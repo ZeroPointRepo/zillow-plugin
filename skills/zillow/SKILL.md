@@ -33,7 +33,7 @@ This plugin bundles the hosted **`zillapi` MCP server** (`https://api.zillapi.co
 - Returns the **full record** (300+ fields): price, Zestimate, rent Zestimate, tax history, price history, photos, schools, agent contact, lat/lon, zpid.
 - This already contains everything — don't follow it with `get_zestimate` for the same property.
 
-### `lookup_property_by_zpid` — 1 credit (24 h cache)
+### `lookup_property_by_zpid` — 1 credit
 - `zpid` (string, required): numeric Zillow property id, e.g. `"11026031"`.
 - Same full record, cheaper. Prefer this whenever you already have a zpid (from a Zillow URL or a previous search result).
 
